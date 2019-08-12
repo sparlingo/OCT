@@ -1,7 +1,7 @@
 {
-  "name": "sparlingo.github.io",
+  "name": "newIceland",
   "version": "0.1.0",
-  "description": "My GH pages site",
+  "description": "Could Newfoundland be it's own country?",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,30 +9,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sparlingo/sparlingo.github.io.git"
+    "url": "git+https://github.com/sparlingo/newIceland.git"
   },
   "author": "Kevin Sparling",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sparlingo/sparlingo.github.io/issues"
-  },
-  "homepage": "https://github.com/sparlingo/sparlingo.github.io#readme",
   "devDependencies": {
     "bulma": "^0.7.5",
     "css-loader": "^3.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "markdown-loader": "^5.0.0",
+    "markdown-loader": "^5.1.0",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
-    "pug": "^2.0.4",
-    "pug-loader": "^2.4.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.4"
   },
   "dependencies": {
-    "gh-pages-webpack-plugin": "^1.0.2",
-    "mapbox-gl": "^1.1.0"
+    "file-loader": "^4.2.0",
+    "mapbox-gl": "^1.1.0",
+    "nunjucks": "^3.2.0"
   }
 }
