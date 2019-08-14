@@ -2,10 +2,11 @@
   "name": "newIceland",
   "version": "0.1.0",
   "description": "Could Newfoundland be it's own country?",
-  "main": "webpack.config.js",
+  "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production"
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
   },
   "repository": {
     "type": "git",
@@ -16,11 +17,6 @@
   "devDependencies": {},
   "dependencies": {
     "bulma": "^0.7.5",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-csso": "^3.0.1",
-    "gulp-image": "^5.1.0",
-    "gulp-nunjucks": "^5.0.0",
     "mapbox-gl": "^1.1.0",
     "node-sass": "^4.12.0",
     "nunjucks": "^3.2.0"
