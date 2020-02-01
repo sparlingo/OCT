@@ -1,10 +1,10 @@
 {
   "name": "OCT",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "What's going on in this humpy bumpy?",
   "main": "",
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss docs/css/mystyles.css",
+    "build": "node-sass --omit-source-map-url sass/mystyles.scss docs/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch",
     "start": "npm run css-watch"
   },
@@ -16,6 +16,11 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
+    "bulma": "^0.8.0",
+    "gulp": "^4.0.2",
+    "gulp-nunjucks": "^5.0.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^4.0.2",
     "mapbox-gl": "^1.6.1",
     "node-sass": "^4.13.1",
     "nunjucks": "^3.2.0"
