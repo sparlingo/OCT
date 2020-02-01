@@ -1,7 +1,7 @@
 {
-  "name": "newIceland",
+  "name": "OCT",
   "version": "0.1.0",
-  "description": "Could Newfoundland be it's own country?",
+  "description": "What's going on in this humpy bumpy?",
   "main": "",
   "scripts": {
     "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyles.css",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sparlingo/newIceland.git"
+    "url": "git+https://github.com/sparlingo/OCT.git"
   },
   "author": "Kevin Sparling",
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "bulma": "^0.7.5",
-    "mapbox-gl": "^1.1.0",
-    "node-sass": "^4.12.0",
+    "bulma": "^0.8.0",
+    "mapbox-gl": "^1.6.1",
+    "node-sass": "^4.13.1",
     "nunjucks": "^3.2.0"
   }
 }
