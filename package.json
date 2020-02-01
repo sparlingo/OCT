@@ -4,7 +4,7 @@
   "description": "What's going on in this humpy bumpy?",
   "main": "",
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyles.css",
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss docs/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch",
     "start": "npm run css-watch"
   },
@@ -16,7 +16,6 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "bulma": "^0.8.0",
     "mapbox-gl": "^1.6.1",
     "node-sass": "^4.13.1",
     "nunjucks": "^3.2.0"
