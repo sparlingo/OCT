@@ -1,0 +1,15 @@
+{
+  "cat1": 
+  [{
+    "prop1": "blah1",
+    "prop2": "blah2"
+  }, {
+    "prop3": "blah3",
+    "prop4": "blah4"
+  }],
+  "cat2":
+  [{
+    "prop5": "prop5",
+    "prop6": "prop6"
+  }]
+}
