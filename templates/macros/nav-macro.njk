@@ -1,0 +1,5 @@
+{% macro active(activePage='home') %}
+  <a href="#" class="navbar-item {% if activePage == 'home' %} is-active {% endif %}">
+    Home
+  </a>
+{% endmacro %}

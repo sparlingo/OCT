@@ -1,13 +1,14 @@
 const gulp = require('gulp');
 const nunjucksRender = require('gulp-nunjucks-render');
+const data = require('gulp-data');
 
 gulp.task('nunjucks', function() {
-  // Gets .html and .nunjucks files in pages
   return gulp.src('pages/**/*.+(njk)')
-  // Renders template with nunjucks
+  .pipe(data(function() {
+    return require('./data/geo.json')
+  }))
   .pipe(nunjucksRender({
       path: ['./templates']
     }))
-  // output files in app folder
   .pipe(gulp.dest('./docs'))
 });
