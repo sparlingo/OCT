@@ -8,6 +8,77 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">		
 		<link rel="stylesheet" href="./css/mystyles.css" />
 		<title>Welcome to the OCT</title>
+		<style>
+			
+      #scrolly {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: #f3f3f3;
+        padding: 1rem;
+      }
+
+      #scrolly > * {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+      }
+
+      article {
+        position: relative;
+        padding: 0 1rem;
+        max-width: 20rem;
+      }
+
+      figure {
+        position: -webkit-sticky;
+        position: sticky;
+        width: 100%;
+        margin: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        background-color: #8a8a8a;
+        z-index: 0;
+      }
+
+      figure p {
+        text-align: center;
+        padding: 1rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: 900;
+        color: #fff;
+      }
+
+      .step {
+        margin: 0 auto 2rem auto;
+        background-color: #3b3b3b;
+        color: #fff;
+      }
+
+      .step:last-child {
+        margin-bottom: 0;
+      }
+
+      .step.is-active {
+        background-color: goldenrod;
+        color: #3b3b3b;
+      }
+
+      .step p {
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.5rem;
+      }
+    
+    </style>
 	</head>
 	<body>
     
@@ -68,6 +139,67 @@
 			This was made by Kevin Sparling, free to all 
 		</footer>
     <script src="./js/custom.js"></script>
+		<script src="https://unpkg.com/intersection-observer"></script>
+		<script src="https://unpkg.com/scrollama"></script>
+		<script src="d3.v4.min.js"></script>
+		<script>
+      var container = document.querySelector("#scroll");
+      var text = container.querySelector(".scroll__text");
+      var steps = text.querySelectorAll(".step");
+
+      // initialize the scrollama
+      var scroller = scrollama();
+
+      // scrollama event handlers
+      function handleStepEnter(response) {
+        // response = { element, direction, index }
+        console.log("enter", response);
+        // add to color to current step
+        response.element.classList.add("is-active");
+      }
+
+      function handleStepExit(response) {
+        // response = { element, direction, index }
+        console.log("exit", response);
+        // remove color from current step
+        response.element.classList.remove("is-active");
+      }
+
+      function handleStepProgress(response) {
+        console.log(response.progress);
+        d3.select(response.element)
+          .select("p")
+          .text(d3.format(".1%")(response.progress));
+      }
+
+      function init() {
+        // set random padding for different step heights (not required)
+        steps.forEach(function(step) {
+          var v = 100 + Math.floor((Math.random() * window.innerHeight) / 4);
+          step.style.padding = v + "px 0px";
+        });
+
+        // 1. setup the scroller with the bare-bones options
+        // this will also initialize trigger observations
+        // 3. bind scrollama event handlers (this can be chained like below)
+        scroller
+          .setup({
+            step: ".scroll__text .step",
+            debug: true,
+            progress: true,
+            offset: 0
+          })
+          .onStepEnter(handleStepEnter)
+          .onStepExit(handleStepExit)
+          .onStepProgress(handleStepProgress);
+
+        // setup resize event
+        window.addEventListener("resize", scroller.resize);
+      }
+
+      // kick things off
+      init();
+    </script>
 		<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"crossorigin="anonymous"></script>
 	</body>
