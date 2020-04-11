@@ -8,7 +8,7 @@ gulp.task('nunjucks', function() {
     return require('./data/geo.json')
   }))
   .pipe(nunjucksRender({
-      path: ['./templates']
-    }))
-  .pipe(gulp.dest('./docs'))
+    path: ['./templates']
+  }))
+  .pipe(gulp.dest('./dist'))
 });

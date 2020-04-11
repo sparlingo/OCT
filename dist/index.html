@@ -1,6 +1,36 @@
-{% extends "layout.njk" %}
-{% block content %}
-{% import '../templates/macros/nav-macro.njk' as nav %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">		
+		<link rel="stylesheet" href="./css/mystyles.css" />
+		<title>Welcome to the OCT</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%
+      }
+
+      .full-screen {
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .blue {
+        background-color: #3883d8;
+      }
+      .orange {
+        background-color: #ea6300;
+      }
+    </style>
+	</head>
+	<body>
+    
+
   <main class="full-screen" role="main">
     <section class="hero is-success is-fullheight">
       <div class="hero-head">
@@ -18,7 +48,11 @@
             </div>
             <div id="navbarMenuHeroC" class="navbar-menu">
               <div class="navbar-end">
-                {{nav.active('home')}}
+                
+  <a href="#" class="navbar-item  is-active ">
+    Home
+  </a>
+
                 <a class="navbar-item">
                   The Abstract
                 </a>
@@ -79,4 +113,42 @@
   </main>
   
 
-{% endblock %}
+    
+	</body>
+  <footer>
+			This was made by Kevin Sparling, free to all 
+	</footer>
+
+  <script src="https://unpkg.com/d3"></script>
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+
+  <script>
+    
+    $(document).ready(function() {
+      $(".navbar-burger").click(function() {
+        $(".navbar-burger").toggleClass("is-active");
+        $(".navbar-menu").toggleClass("is-active");
+      });
+    });
+
+    var controller = new ScrollMagic.Controller();
+
+    var scene1 = new ScrollMagic.Scene({
+      triggerElement: "#intro",
+      duration: $(window).height() - 100
+      triggerHook: 0,
+      reverse: true
+    })
+    .setPin('#intro') 
+    .addTo(controller);
+
+    var scene2 = new ScrollMagic.Scene({
+      triggerElement: "#outro",
+      duration: 125
+    })
+    .setPin('#outro')
+    .addTo(controller)
+
+  </script>
+</html>

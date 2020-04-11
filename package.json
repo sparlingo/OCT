@@ -4,7 +4,7 @@
   "description": "What's going on in this humpy bumpy?",
   "main": "",
   "scripts": {
-    "build": "node-sass --omit-source-map-url sass/mystyles.scss docs/css/mystyles.css",
+    "build": "node-sass --omit-source-map-url sass/mystyles.scss dist/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch",
     "start": "npm run css-watch"
   },

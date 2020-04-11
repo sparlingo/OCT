@@ -29,7 +29,60 @@
     </style>
 	</head>
 	<body>
-    {% block content %} {% endblock %}    
+    
+  <section class="hero is-success">
+  <div class="hero-head">
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <p class="subtitle">OCT</p>
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenuHeroC">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroC" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active">
+              Home
+            </a>
+            <a class="navbar-item">
+              The Abstract
+            </a>
+            <a class="navbar-item">
+              The Whole Thing
+            </a>
+            <span class="navbar-item">
+              <a class="button is-success is-inverted">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Download</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        The OCT is a nice neighbourhood in Shenzhen, China
+      </h1>
+      <h2 class="subtitle">
+        And it's totally crazy
+      </h2>
+    </div>
+  </div>
+</section>
+
+  <h1>It's familiar</h1>
+    
 	</body>
   <footer>
 			This was made by Kevin Sparling, free to all 
@@ -40,7 +93,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 
   <script>
-    {# for the header #}
+    
     $(document).ready(function() {
       $(".navbar-burger").click(function() {
         $(".navbar-burger").toggleClass("is-active");
